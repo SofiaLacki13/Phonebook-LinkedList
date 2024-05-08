@@ -52,7 +52,9 @@ public class phonebookManager {
     public void setAddress() { //start of setAddress
         System.out.println("What is the person's address? ex: 1234 Apple St.");
         address = input.next();
+        address = address.concat(" "); 
         address = address.concat(input.next()); 
+        address = address.concat(" "); 
         address = address.concat(input.next()); 
         
     } //end of setAddress
@@ -76,7 +78,7 @@ public class phonebookManager {
         String allPeople = "Phone Book: \n";
         for (listNode person : bellinghamPhoneNum) {
             allPeople = allPeople.concat(person.toString());
-            allPeople = allPeople.concat("\n");
+            allPeople = allPeople.concat("\n \n");
         }
         return allPeople;
     }
