@@ -1,6 +1,6 @@
 //Creates LinkedList and has methods like modify entries, add entries, delete entries, etc
 
-
+package phonebook;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -20,7 +20,7 @@ public class phonebookManager {
     
     //Let the user add entries
     public void addEntry() { //start of addEntry
-        String newEntry;
+        String newEntry = "y";
         
         //Add at least one new entry
         do {
@@ -29,13 +29,14 @@ public class phonebookManager {
             setAddress();
             setCity();
             setPhoneNumber();
+            
+            person = new listNode(firstName, lastName, address, city, phoneNumber);
+            bellinghamPhoneNum.add(person);
 
             System.out.println("Would you like to add a new entry? y/n ");
             newEntry = input.next();
-        } while(newEntry.equals("y")) {
-            person = new listNode(firstName, lastName, address, city, phoneNumber);
-            bellinghamPhoneNum.add(person);
-        }
+        } while (newEntry.equals("y"));
+
     } //end of addEntry
 
     public void setFirstName() { //start of setFirstName
@@ -49,8 +50,11 @@ public class phonebookManager {
     } //end of setLastName
 
     public void setAddress() { //start of setAddress
-        System.out.println("What is the person's address?");
+        System.out.println("What is the person's address? ex: 1234 Apple St.");
         address = input.next();
+        address = address.concat(input.next()); 
+        address = address.concat(input.next()); 
+        
     } //end of setAddress
 
     public void setCity() { //start of setCity
@@ -67,4 +71,13 @@ public class phonebookManager {
         for (int i = 0; i < )
     }
 */
+
+    public String toString() {
+        String allPeople = "Phone Book: \n";
+        for (listNode person : bellinghamPhoneNum) {
+            allPeople = allPeople.concat(person.toString());
+            allPeople = allPeople.concat("\n");
+        }
+        return allPeople;
+    }
 }

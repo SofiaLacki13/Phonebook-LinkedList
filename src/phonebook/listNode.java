@@ -1,5 +1,5 @@
 //List node is to create the object for each person, like getfirstname, setaddress, etc
-
+package phonebook;
 
 public class listNode {
     private String firstName;
